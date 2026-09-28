@@ -114,3 +114,11 @@ Add screenshots like these to make the project feel more hands-on:
 - Model comparison notebook with evaluation metrics
 - Streamlit interface for interactive prediction
 - Documented workflow and reflection on model behavior
+
+# Financial News Sentiment Prediction
+
+# Financial News Sentiment Prediction
+
+This project explores how finance‑related tweets reflect investor mood. I started with simple RNN models to learn the basics of text classification, then moved on to fine‑tuning BERT (FinBERT) for better accuracy. The goal was to see how much performance improves when moving from traditional deep learning to transformer‑based models.
+
+Along the way, I built a small Streamlit app where you can type a tweet and instantly see whether the model thinks it’s Bullish, Bearish, or Neutral.
