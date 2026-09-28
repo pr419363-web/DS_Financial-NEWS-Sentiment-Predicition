@@ -1,10 +1,11 @@
 # Financial News Sentiment Prediction using Deep Learning & BERT
 
 ## Repository
-- GitHub repo: https://github.com/your-username/Financial-News-Sentiment-Prediction-using-Deep-Learning-BERT
+- Correct repo name: `DS_Financial-NEWS-Sentiment-Prediction`
+- GitHub repo: https://github.com/your-username/DS_Financial-NEWS-Sentiment-Prediction
 
 ## Project Overview
-This project builds a finance-focused sentiment classifier for short financial texts, with labels for **Bearish**, **Bullish**, and **Neutral**. The main goal was to experiment with lightweight recurrent models and compare them against a transformer-based approach for sentiment prediction in market-related tweets and headlines.
+This project builds a finance-focused sentiment classifier for short financial texts, with labels for **Bearish**, **Bullish**, and **Neutral**. I wanted to see how well deep learning models could capture the tone of market-related tweets and headlines, especially when those texts are short, noisy, and often packed with jargon.
 
 This project includes:
 - Baseline deep learning text classifiers using **Embedding + RNN / LSTM / GRU**
@@ -13,13 +14,16 @@ This project includes:
 - A simple **Streamlit dashboard** for live inference
 - A notebook that documents the end-to-end workflow from data cleaning to model comparison
 
-## Why this project
-I started with RNN-style models first because they are easy to train quickly, easy to debug, and a good baseline for short text classification before moving into transformer-based methods. Financial tweets are noisy and compact, so a clean preprocessing pipeline mattered almost as much as the model architecture.
+## Why I Built This
+I wanted to understand how investor sentiment on Twitter and financial news can reflect broader market mood. Starting with RNNs gave me a better grasp of sequence modeling and a fast baseline, but I quickly noticed they struggled with longer dependencies and more nuanced wording. That made BERT a natural next step, and the improvement in F1-score was clear.
 
-One of the biggest challenges was handling abbreviations, ticker symbols, and slang-heavy financial language. I also noticed that **Neutral** tweets were often harder to classify because they can sound confident while still being non-directional or ambiguous, especially when they mention earnings, guidance, or macro headlines without explicit bullish or bearish cues.
+## Challenges
+- Cleaning tweets was tricky because financial jargon, ticker symbols, and sarcasm often confused the model.
+- Neutral tweets were the hardest to classify because they often blend optimism and caution without explicit direction.
+- RNNs were easy to train and debug, but BERT gave stronger generalization on ambiguous sentiment.
 
 ## Dataset
-The project uses the official Hugging Face dataset:
+Dataset: Twitter Financial News Sentiment on Hugging Face
 - `zeroshot/twitter-financial-news-sentiment`
 - Dataset page: https://huggingface.co/datasets/zeroshot/twitter-financial-news-sentiment
 
@@ -64,6 +68,8 @@ For example:
 - **Buzzword-heavy headlines** sometimes confused the model when the sentiment was implied rather than directly stated
 - **Neutral** statements involving earnings or macro news were harder to separate from weak bullish or bearish signals
 
+A good example is a tweet like: *“Great job $AAPL, losing billions again!”* This is clearly negative in tone, but the model sometimes treats it as Neutral because sarcasm and irony are difficult for short-text sentiment systems to detect.
+
 This kind of error analysis is useful because it shows that the toughest cases do not always come from raw model weakness; they often come from ambiguous finance language and the lack of deeper market context in short tweets.
 
 ## Sample outputs
@@ -81,6 +87,18 @@ Predicted sentiment: Neutral
 ```
 
 The Streamlit dashboard also visualizes confidence scores as a probability bar chart for each class.
+
+## Screenshots
+Add screenshots like these to make the project feel more hands-on:
+- Confusion matrix from model evaluation
+- Streamlit dashboard UI showing prediction inputs and output probabilities
+- Example prediction: *Tweet: “$TSLA is doomed” → Predicted: Bearish*
+
+```markdown
+![Confusion Matrix](images/confusion_matrix.png)
+![Streamlit Dashboard](images/streamlit_dashboard.png)
+![Example Prediction](images/example_prediction.png)
+```
 
 ## Notes
 - The notebook includes a full pipeline from text cleaning to model evaluation.
