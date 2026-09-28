@@ -1,11 +1,13 @@
-# Financial News Sentiment Prediction using Deep Learning & BERT
+# Financial News Sentiment Prediction
+
+This project explores how finance-related tweets reflect investor mood. I started with simple RNN models to understand the basics of sequence modeling, then moved on to BERT-based fine-tuning to improve both accuracy and generalization. The goal was to compare classic deep learning approaches with transformer-based models on short, noisy financial text.
 
 ## Repository
 - Correct repo name: `DS_Financial-NEWS-Sentiment-Prediction`
 - GitHub repo: https://github.com/your-username/DS_Financial-NEWS-Sentiment-Prediction
 
 ## Project Overview
-This project builds a finance-focused sentiment classifier for short financial texts, with labels for **Bearish**, **Bullish**, and **Neutral**. I wanted to see how well deep learning models could capture the tone of market-related tweets and headlines, especially when those texts are short, noisy, and often packed with jargon.
+This project builds a finance-focused sentiment classifier for short financial texts, with labels for **Bearish**, **Bullish**, and **Neutral**. The models are designed to handle market-related tweets and headlines, where the language is short, noisy, and often full of jargon.
 
 This project includes:
 - Baseline deep learning text classifiers using **Embedding + RNN / LSTM / GRU**
@@ -15,12 +17,13 @@ This project includes:
 - A notebook that documents the end-to-end workflow from data cleaning to model comparison
 
 ## Why I Built This
-I wanted to understand how investor sentiment on Twitter and financial news can reflect broader market mood. Starting with RNNs gave me a better grasp of sequence modeling and a fast baseline, but I quickly noticed they struggled with longer dependencies and more nuanced wording. That made BERT a natural next step, and the improvement in F1-score was clear.
+I wanted to explore how investor sentiment on Twitter reflects market mood. Starting with RNNs helped me understand the basics of sequence modeling, but they struggled with longer dependencies and more nuanced wording. Fine-tuning BERT gave a clear boost in F1-score and handled financial jargon much better.
 
-## Challenges
+## Challenges and Learnings
 - Cleaning tweets was tricky because financial jargon, ticker symbols, and sarcasm often confused the model.
-- Neutral tweets were the hardest to classify because they often blend optimism and caution without explicit direction.
-- RNNs were easy to train and debug, but BERT gave stronger generalization on ambiguous sentiment.
+- Neutral tweets were some of the hardest examples to classify because they often blend optimism and caution without an explicit direction.
+- RNNs trained faster and were easier to debug, but BERT generalized better on ambiguous language.
+- I also learned that a lot of errors came from sarcasm and short bursts of market commentary, not just weak model architecture.
 
 ## Dataset
 Dataset: Twitter Financial News Sentiment on Hugging Face
